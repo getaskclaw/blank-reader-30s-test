@@ -1,4 +1,6 @@
-# BLANK-READER 30 秒测试
+# 空白读者 30 秒测试
+
+（英文名：The Blank-Reader 30-Second Test）
 
 [English](README.en.md) · 简体中文
 
