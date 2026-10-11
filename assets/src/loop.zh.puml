@@ -1,0 +1,42 @@
+@startuml
+skinparam DefaultFontName "Noto Sans CJK SC"
+skinparam DefaultFontColor #1f2937
+skinparam ArrowColor #5b6b8c
+skinparam ArrowFontColor #1f2937
+skinparam NoteBackgroundColor #dfe5fb
+skinparam NoteBorderColor #5b6b8c
+skinparam NoteFontColor #1f2937
+skinparam ActivityBackgroundColor #eef2fb
+skinparam ActivityBorderColor #5b6b8c
+skinparam ActivityFontColor #1f2937
+skinparam ActivityStartColor #5b6b8c
+skinparam ActivityEndColor #5b6b8c
+skinparam ActivityDiamondBackgroundColor #dfe5fb
+skinparam ActivityDiamondBorderColor #5b6b8c
+skinparam ActivityDiamondFontColor #1f2937
+skinparam PartitionBackgroundColor #ffffff
+skinparam PartitionBorderColor #5b6b8c
+skinparam PartitionFontColor #1f2937
+skinparam BackgroundColor #ffffff
+title 30 秒测试主循环：改到「真卡住」清零才放行
+start
+:作者交出一稿;
+repeat
+  :空白读者上场\n(零背景·全新会话·只读这一份);
+  if (30 秒门槛:\n能说清这是干嘛的吗?) then (说不清)
+    :重写开头，再测;
+  else (说得清)
+    :三个固定问题\n1 这是干嘛的  2 最想知的有答案吗  3 哪里卡住;
+    :卡词逐条分三类;
+    fork
+      :真卡住 → 必修\n补定义/换常用词/删行话;
+    fork again
+      :靠上下文猜 → 首现处补一行括号;
+    fork again
+      :品味类 → 不动，交定稿人;
+    end fork
+  endif
+repeat while (真卡住清零了吗?) is (还没有) not (清零了);
+:放行交付;
+stop
+@enduml

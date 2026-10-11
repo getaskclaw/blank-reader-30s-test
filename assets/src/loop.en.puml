@@ -1,0 +1,41 @@
+@startuml
+skinparam DefaultFontColor #1f2937
+skinparam ArrowColor #5b6b8c
+skinparam ArrowFontColor #1f2937
+skinparam NoteBackgroundColor #dfe5fb
+skinparam NoteBorderColor #5b6b8c
+skinparam NoteFontColor #1f2937
+skinparam ActivityBackgroundColor #eef2fb
+skinparam ActivityBorderColor #5b6b8c
+skinparam ActivityFontColor #1f2937
+skinparam ActivityStartColor #5b6b8c
+skinparam ActivityEndColor #5b6b8c
+skinparam ActivityDiamondBackgroundColor #dfe5fb
+skinparam ActivityDiamondBorderColor #5b6b8c
+skinparam ActivityDiamondFontColor #1f2937
+skinparam PartitionBackgroundColor #ffffff
+skinparam PartitionBorderColor #5b6b8c
+skinparam PartitionFontColor #1f2937
+skinparam BackgroundColor #ffffff
+title The 30-second test loop: ship only when "truly stuck" hits zero
+start
+:Author hands over a draft;
+repeat
+  :Blank reader takes it\n(zero background, fresh session, reads only this file);
+  if (30-second gate:\ncan they say what this is for?) then (no)
+    :Rewrite the opening, test again;
+  else (yes)
+    :The three fixed questions\n1 what is it for  2 is your top question answered  3 where did you get stuck;
+    :Sort each stuck item into three kinds;
+    fork
+      :Truly stuck: must fix\ndefine it, use a plain word, or cut the jargon;
+    fork again
+      :Guessed from context:\nadd a one-line gloss at first use;
+    fork again
+      :Taste: don't touch,\nhand it to the editor;
+    end fork
+  endif
+repeat while (Truly stuck at zero?) is (not yet) not (zero);
+:Ship it;
+stop
+@enduml
